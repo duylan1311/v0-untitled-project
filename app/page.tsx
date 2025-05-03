@@ -80,12 +80,21 @@ export default function Home() {
           </h2>
           <div className="bg-black bg-opacity-60 backdrop-blur-sm p-6 rounded-lg flex flex-col items-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden mb-8 border-4 border-emerald-800">
-              <Image src="/placeholder.svg?key=44emw" alt="Artist portrait" fill className="object-cover" />
+              <Image
+                src="/images/eye-plant.png"
+                alt="Eye plant - symbol of the chronicler"
+                fill
+                className="object-cover"
+              />
             </div>
-            <p className="text-2xl text-center">
+            <p className="text-2xl text-center mb-6">
               I am the chronicler
               <br />
               of strange dreams...
+            </p>
+            <p className="text-lg text-emerald-200 text-center">
+              My vision extends beyond the veil of ordinary perception. Through the eye of the cosmic plant, I observe
+              the hidden realms and document the surreal wonders that most cannot see.
             </p>
           </div>
         </section>
