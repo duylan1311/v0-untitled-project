@@ -1,12 +1,14 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
-import { headingFont, bodyFont, navFont } from "./fonts"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "The Surreal World",
-  description: "A journey into the surreal world of mystical art and strange dreams",
+  title: "Bạn Chuối",
+  description: "Người bạn tâm sự với nhân vật chuối dễ thương",
     generator: 'v0.dev'
 }
 
@@ -16,11 +18,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`min-h-screen text-emerald-100 ${headingFont.variable} ${bodyFont.variable} ${navFont.variable}`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+    <html lang="en">
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

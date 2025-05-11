@@ -3,62 +3,264 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 0 0% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 0 0% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 142.1 76.2% 36.3%;
-  --primary-foreground: 355.7 100% 97.3%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 15%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 12 6.5% 15.1%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 142.4 71.8% 29.2%;
+  --background: 36 100% 95%;
+  --foreground: 16 25% 38%;
+  --card: 0 0% 100%;
+  --card-foreground: 16 25% 38%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 16 25% 38%;
+  --primary: 15 100% 87%;
+  --primary-foreground: 16 25% 38%;
+  --secondary: 36 100% 95%;
+  --secondary-foreground: 16 25% 38%;
+  --muted: 36 100% 95%;
+  --muted-foreground: 16 25% 38%;
+  --accent: 36 100% 95%;
+  --accent-foreground: 16 25% 38%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 36 100% 95%;
+  --border: 16 25% 38%;
+  --input: 16 25% 38%;
+  --ring: 15 100% 87%;
+  --radius: 0.75rem;
+}
 
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
-  --font-nav: var(--font-nav);
+.dark {
+  --background: 16 25% 10%;
+  --foreground: 36 100% 95%;
+  --card: 16 25% 10%;
+  --card-foreground: 36 100% 95%;
+  --popover: 16 25% 10%;
+  --popover-foreground: 36 100% 95%;
+  --primary: 15 100% 70%;
+  --primary-foreground: 36 100% 95%;
+  --secondary: 16 25% 15%;
+  --secondary-foreground: 36 100% 95%;
+  --muted: 16 25% 15%;
+  --muted-foreground: 16 25% 70%;
+  --accent: 16 25% 15%;
+  --accent-foreground: 36 100% 95%;
+  --destructive: 0 72.2% 50.6%;
+  --destructive-foreground: 36 100% 95%;
+  --border: 16 25% 15%;
+  --input: 16 25% 15%;
+  --ring: 15 100% 70%;
 }
 
 body {
-  font-family: var(--font-body), serif;
-  background-image: url("/images/mystical-cat-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-color: #041714;
-  letter-spacing: 0.01em;
+  background-color: #fff0e0;
+  color: #5d4037;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading), serif;
-  letter-spacing: 0.03em;
-  font-weight: 400;
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
-h1 {
-  text-shadow: 0 0 10px rgba(72, 255, 167, 0.3);
+.animate-bounce {
+  animation: bounce 0.6s infinite;
 }
 
-nav a {
-  font-family: var(--font-nav), sans-serif;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-  text-transform: uppercase;
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
-.glow-text {
-  text-shadow: 0 0 8px rgba(72, 255, 167, 0.4);
+.animate-bounce-gentle {
+  animation: bounce-gentle 1.2s infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.3s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s forwards;
+}
+
+/* Custom rounded corners for inputs and buttons */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Custom shadows for a cute look */
+.shadow-cute {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Sparkle animation for special elements */
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.sparkle::before,
+.sparkle::after {
+  content: "✨";
+  position: absolute;
+  animation: sparkle 2s infinite;
+}
+
+.sparkle::before {
+  top: -10px;
+  left: 0;
+}
+
+.sparkle::after {
+  bottom: -10px;
+  right: 0;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Message animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Focus styles */
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-orange-300:focus {
+  --tw-ring-color: rgba(251, 176, 59, 0.5);
+}
+
+.focus\:border-orange-300:focus {
+  border-color: rgba(251, 176, 59, 1);
 }
